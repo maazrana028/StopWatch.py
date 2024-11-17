@@ -7,6 +7,7 @@ his Python code implements a simple stopwatch program using the time, sys, and s
 import time: This line imports the time module, which provides functions for working with time, such as getting the current time and calculating time differences.
 import sys: This line imports the sys module, which provides access to system-specific parameters and functions, including stdin (standard input).
 import select: This line imports the select module, which allows you to monitor multiple input/output (I/O) objects, such as file descriptors and sockets, for readiness.
+
 2. Stopwatch Class:
 
 The Stopwatch class represents the stopwatch functionality.
@@ -22,6 +23,7 @@ resetWatch(self): Resets the stopwatch.
 It sets self.elapsedTime to 0 and self.isRunning to False.
 logWatchTime(self): Prints the total elapsed time.
 It calculates the total time by adding self.elapsedTime to the time elapsed since the last startWatch call if the stopwatch is currently running.
+
 3. Main Program:
 
 stopwatch = Stopwatch(): Creates an instance of the Stopwatch class.
@@ -38,6 +40,7 @@ After the main loop, the program enters another loop that runs as long as the st
 This loop uses select.select() to check if there is any input available on sys.stdin (standard input).
 If there is input, the loop breaks, allowing the program to proceed.
 Logging Time:
+
 Finally, the program calls stopwatch.logWatchTime() to print the total elapsed time.
 time.sleep(0.0001) adds a small delay to allow the program to respond to any input before exiting.
 Key Concepts:
